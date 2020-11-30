@@ -47,8 +47,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 	private SysDeptService sysDeptService;
 
 	@Override
-	public List<Long> queryAllMenuId(Long userId) {
+	public List<Long> queryAllMenuId(Long userId)
+	{
+
 		return baseMapper.queryAllMenuId(userId);
+
 	}
 
 	@Override
