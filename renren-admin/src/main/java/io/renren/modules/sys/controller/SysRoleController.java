@@ -48,7 +48,7 @@ public class SysRoleController extends AbstractController {
 
 		return R.ok().put("page", page);
 	}
-	
+
 	/**
 	 * 角色列表
 	 */

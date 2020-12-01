@@ -64,8 +64,8 @@ paths:
   /sys/user/list:
     get:
       tags:
-        - 管理员管理
-      summary: 管理员列表
+        - 成员管理`
+      summary: 成员列表
       produces:
         - application/json
       parameters:
@@ -93,26 +93,26 @@ paths:
           type: string
       responses:
         '200':
-          description: 返回管理员列表
+          description: 返回成员列表
           schema:
             $ref: '#/definitions/SysUserEntity'
   /sys/user/info:
     get:
       tags:
-        - 管理员管理
-      summary: 当前管理员信息
+        - 成员管理
+      summary: 当前成员信息
       produces:
         - application/json
       responses:
         '200':
-          description: 返回当前管理员信息
+          description: 返回当前成员信息
           schema:
             $ref: '#/definitions/SysUserEntity'
   /sys/user/info/{userId}:
     get:
       tags:
-        - 管理员管理
-      summary: 获取管理员信息
+        - 成员管理
+      summary: 获取成员信息
       produces:
         - application/json
       parameters:
@@ -123,13 +123,13 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回管理员信息
+          description: 返回成员信息
           schema:
             $ref: '#/definitions/SysUserEntity'
   /sys/user/password:
     post:
       tags:
-        - 管理员管理
+        - 成员管理
       summary: 修改密码
       produces:
         - application/json
@@ -151,13 +151,13 @@ paths:
   /sys/user/save:
     post:
       tags:
-        - 管理员管理
-      summary: 添加管理员
+        - 成员管理
+      summary: 添加成员
       produces:
         - application/json
       parameters:
         - name: body
-          description: 管理员对象
+          description: 成员对象
           in: body
           type: string
           schema:
@@ -170,13 +170,13 @@ paths:
   /sys/user/update:
     post:
       tags:
-        - 管理员管理
-      summary: 修改管理员
+        - 成员管理
+      summary: 修改成员
       produces:
         - application/json
       parameters:
         - name: body
-          description: 管理员对象
+          description: 成员对象
           in: body
           type: string
           schema:
@@ -189,8 +189,8 @@ paths:
   /sys/user/delete:
     post:
       tags:
-        - 管理员管理
-      summary: 删除管理员
+        - 成员管理
+      summary: 删除成员
       produces:
         - application/json
       parameters:
@@ -237,7 +237,7 @@ paths:
     get:
       tags:
         - 部门管理
-      summary: 获取上级部门Id(管理员则为0)
+      summary: 获取上级部门Id(成员则为0)
       produces:
         - application/json
       responses:
@@ -367,7 +367,7 @@ paths:
           type: string
       responses:
         '200':
-          description: 返回管理员列表
+          description: 返回成员列表
           schema:
             $ref: '#/definitions/SysRoleEntity'
   /sys/role/select:
@@ -375,12 +375,12 @@ paths:
       tags:
         - 角色管理
       summary: 当前账号角色列表
-      description: 如果是超级管理员，则能查询所有的角色列表
+      description: 如果是超级成员，则能查询所有的角色列表
       produces:
         - application/json
       responses:
         '200':
-          description: 返回管理员列表
+          description: 返回成员列表
           schema:
             $ref: '#/definitions/SysRoleEntity'
   /sys/role/info/{roleId}:
